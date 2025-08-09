@@ -1,0 +1,48 @@
+Starlet: Starlet manages how your API receives requess and sends back responses.
+Pydantic: data validation library(Pydantic is used to check if the data coming into your 
+API is correct and in the right format)
+
+
+Philosophy of FastAPI:
+# All API which are made under FastAPI are very fast to run along with fast to code.
+
+
+Why FastAPU is fast to run:
+#                                         (This is nothing but protocol/starlette)
+# Web Server                        ----> SGI(translator)                          ----> API Code
+                     
+POST /predict HTTP/1.1          Request.method --> "POST"                          "prediction":8.3
+Host: api.example.com           Request.url    --> "/predict"
+Content-Type:application/json   Request.json() --> {"feature1":5.2,"feature2":3.2}   HTTP/1.1 200 OK
+Content-Length: 45                                                                   Content-Type:       
+                                                                                     application/json
+                                                                                     {
+                                                                                        "prediction":8.3
+                                                                                     }
+{
+    "feature1":5.2,
+    "feature2": 3.2
+}
+
+# Now request will go from API code to Web server again
+
+Why FastAPI is fast to code:
+
+1: Automatic inpout validation
+2: Auto-Generated Interaction Documentation 
+3: Seamless integration with modern Ecosystem(ML/DL libraries,OAuth,JWT,
+   SQL ALchemey,Docker,Kubernetes etc)
+   
+# Status code:
+
+They help the client (browswer,mobile app etc) understand
+
+1: whether the request was successful
+2: whether something went wrong and what kind of issue occurred(if any)
+
+# 2xx: success : The request was successfully received and processed
+# 3xx: Redirect Further action needs to be take (e.g.. redirect)
+# 4xx client Error: Something is wrong with the request from client
+# 5xx: Server side Error: Something went wrong on the server side
+
+
